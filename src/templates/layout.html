@@ -1,0 +1,23 @@
+<!--
+    templateType: page
+    label: Page template
+    isAvailableForNewContent: true
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ content.html_title }}</title>
+    <meta name="description" content="{{ content.meta_description }}">
+    {{ require_css(get_asset_url("../dist/main.css")) }}
+    {{ standard_header_includes }}
+  </head>
+  <body>
+    <div class="bg-white p-12">
+
+    </div>
+    {% module "page_template_logo" path="@hubspot/logo" label="Logo" %}
+    {% module "page_template_rich_text" path="@hubspot/rich_text" label="Rich Text" %}
+    {{ standard_footer_includes }}
+  </body>
+</html>

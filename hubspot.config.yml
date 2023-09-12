@@ -1,0 +1,14 @@
+defaultPortal: matt-practicum
+portals:
+  - name: matt-practicum
+    portalId: 22127437
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CKu5jLeoMRIOAAUAQAAAAGwAQAJYAgEYzcbGCiCYsbIVKO7pDDIUccp7xeOBDjHsVqsxPENWd9wkIxw6MAAABEEAAAAAAAAAAAAAAAAAgAAAAAAABAAAAAAAAAAAPGBQAABEAABA_BgGABAgA0IUB993wByCCXaEIdgTNtOrBUWYtjtKA25hMVIAWgA
+        expiresAt: '2023-09-12T00:55:45.602Z'
+    personalAccessKey: >-
+      CiRjM2ZmNzJjMi0yMTczLTRmZTEtYTRhMy1lMDI4YWI1Y2I3ZTMQzcbGChiYsbIVKhkABeaRgk5bX3BOuYPzexwlhOYvKCP7UxQjSgNuYTE
+    sandboxAccountType: null
+    parentAccountId: null

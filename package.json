@@ -1,0 +1,21 @@
+{
+  "name": "Hubspot-Practicum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css && hs upload src practicum-theme-matt",
+    "dev": "concurrently --kill-others \"npx tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css --watch\" \"hs watch src practicum-theme-matt\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "scss": "^0.2.4"
+  }
+}
