@@ -13,13 +13,6 @@
   "license": "./license.txt",
   "responsive_breakpoints": [
     {
-      "name": "laptop",
-      "mediaQuery": "@media (max-width: 1241px)",
-      "previewWidth": {
-        "value": 1200
-      }
-    },
-    {
       "name": "mobile",
       "mediaQuery": "@media (max-width: 767px)",
       "previewWidth": {
