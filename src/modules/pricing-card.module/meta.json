@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "../../images/module-icons/table.svg",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 112800130394,
+  "label" : "Pricing card",
+  "is_available_for_new_content" : true
+}

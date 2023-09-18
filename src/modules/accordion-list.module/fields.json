@@ -1,0 +1,51 @@
+[ {
+  "id" : "0463beac-f71d-59c7-7ce8-c25cf3754a18",
+  "name" : "accordions",
+  "display_width" : null,
+  "label" : "Accordions",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "403a1f27-3fc7-4032-7407-1df3e9c0050c",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "403a1f27-3fc7-4032-7407-1df3e9c0050c",
+    "name" : "accordion_label",
+    "display_width" : null,
+    "label" : "Accordion Label",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Accordion Label"
+  }, {
+    "id" : "5a5df218-1af7-2f5f-57c1-e29f96da247e",
+    "name" : "accordion_content",
+    "display_width" : null,
+    "label" : "Accordion Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "accordion_label" : "Accordion Label"
+  } ]
+}, {
+  "id" : "0c782e3e-c6df-db43-60e8-bcd08e26f1c1",
+  "name" : "disable_indicator",
+  "display_width" : null,
+  "label" : "Disable Indicator",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+} ]

@@ -1,0 +1,32 @@
+<div class="grid grid-cols-2 gap-4">
+	{% for item in module.field_group %}
+		<div>
+			<div class="flex items-center">
+				{% if item.image_field.src %}
+					{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+					{% if item.image_field.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+					{% elif item.image_field.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{ item.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+					{% endif %}
+					{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+					<img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+					{% endif %}
+			</div>
+			<div class="flex">
+				{% inline_text field="text_field" value="{{ item.text_field }}" %}
+				{% inline_rich_text field="richtext_field" value="{{ item.richtext_field }}" %}
+				{% set href = item.link_field.url.href %}
+				{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+				{% endif %}
+				<a href="{{ href }}"
+					{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+					{% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+					>
+					Link text
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+</div>

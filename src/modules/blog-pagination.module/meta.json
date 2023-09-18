@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "../../images/module-icons/ellipses.svg",
+  "host_template_types" : [ "BLOG_LISTING" ],
+  "module_id" : 112801485928,
+  "label" : "Blog pagination",
+  "is_available_for_new_content" : true
+}

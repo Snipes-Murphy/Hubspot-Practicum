@@ -1,0 +1,11 @@
+.m-overlay:before {
+	content: '';
+	background: linear-gradient(90deg,rgba(20,21,37,.9) 25%,rgba(20,21,37,.25));
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 1;
+}

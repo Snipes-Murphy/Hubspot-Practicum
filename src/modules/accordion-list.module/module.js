@@ -1,0 +1,1 @@
+(()=>{let c=document.getElementsByClassName("js-accordion__toggle");Array.from(c).forEach((function(c){c.addEventListener("click",(function(){c.closest(".js-accordion").classList.toggle("is-active")}))}))})();

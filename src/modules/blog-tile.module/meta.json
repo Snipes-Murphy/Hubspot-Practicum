@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 112801485929,
+  "label" : "Blog Tile",
+  "is_available_for_new_content" : true
+}

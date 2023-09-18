@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "../../images/module-icons/blog.svg",
+  "host_template_types" : [ "BLOG_LISTING" ],
+  "module_id" : 112800130392,
+  "label" : "Blog listings",
+  "is_available_for_new_content" : true
+}

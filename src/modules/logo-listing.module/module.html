@@ -1,0 +1,22 @@
+
+{% set imageClass = module.centered == true ? 'md:col-2 p-0' : '' %}
+{% set gridClass = module.centered == true ? 'row justify-center items-center space-x-4' : 'grid grid-cols-3 lg:grid-cols-6 gap-4' %}
+
+<div class="{{ gridClass }}">
+	{% for item in module.client_logo %}
+		{% if item.src %}
+			{% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+			{% if item.size_type == 'auto' %}
+				{% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"' %}
+			{% elif item.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+  
+			{% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+  
+			<div class="{{ imageClass }}">
+				<img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>

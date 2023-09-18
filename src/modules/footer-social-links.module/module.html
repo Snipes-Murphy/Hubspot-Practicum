@@ -1,0 +1,33 @@
+<style>
+  {% scope_css %}
+    a svg {
+      max-height: 25px;
+    }
+  {% end_scope_css %}
+</style>
+
+<p>
+  Social
+</p>
+
+<div class="social-links-wrapper grid grid-cols-4">
+  {% for item in module.social_links %}
+	{% set href = item.platform_link.url.href %}
+	{% if item.platform_link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+	{% endif %}
+	<a href="{{ href }}"
+		{% if item.platform_link.open_in_new_tab %}target="_blank"{% endif %}
+		{% if item.platform_link.rel %}rel="{{ item.platform_link.rel }}"{% endif %}
+		>
+		{% icon
+      extra_classes="social-links__icon",
+      name="{{ item.platform }}",
+      purpose="semantic",
+      style="SOLID",
+      title="{{ item.accessibility.title }}",
+      unique_in_loop=True
+    %}
+	</a>
+  {% endfor %}
+</div>

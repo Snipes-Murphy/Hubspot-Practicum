@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pull": "hs fetch practicum-theme-matt src && tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css",
-    "build": "tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css && hs upload src practicum-theme-matt",
-    "dev": "concurrently --kill-others \"npx tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css --watch\" \"hs watch src practicum-theme-matt\""
+    "pull": "hs fetch --overwrite webcoda-theme-new src && tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css",
+    "push": "tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css && hs upload src webcoda-theme-new",
+    "dev": "concurrently --kill-others \"npx tailwindcss -i ./FE_DEV/main.scss -o ./src/dist/main.css --watch\" \"hs watch src webcoda-theme-new\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "tailwind-bootstrap-grid": "^5.0.1",
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {

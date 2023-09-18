@@ -1,0 +1,17 @@
+<!--
+  templateType: section
+  label: Container
+  isAvailableForNewContent: true
+  description: "Centered container to allow content to be not full-width."
+-->
+
+{% dnd_section padding={ 
+    'default': { 'top': 56, 'bottom': 56, 'left': 24, 'right': 24 },
+    'mobile': { 'top': 32, 'bottom': 32, 'left': 16, 'right': 16 },
+  } 
+  max_width=1350,%}
+  {% dnd_column
+  %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+	

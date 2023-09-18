@@ -1,0 +1,62 @@
+.c-accordion.is-active .c-accordion__content {
+  display: block;
+}
+
+.c-accordion.is-active .c-accordion__toggle__indicator svg {
+  transform: rotate(-180deg);
+}
+
+.c-accordion {
+  border-bottom: 2px solid black;
+}
+
+.c-accordion:last-of-type {
+  border-bottom: 0;
+}
+
+.c-accordion__toggle {
+  padding: 14px 12px;
+  display: flex;
+  appearance: none;
+  background-color: transparent;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0px;
+  color: black;
+  font-weight: 500;
+}
+
+.c-accordion__toggle:active, .c-accordion__toggle:hover, .c-accordion__toggle:focus {
+  background-color: transparent;
+  color: black;
+}
+
+.c-accordion__toggle__label {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.c-accordion__toggle__indicator {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 999rem;
+}
+
+.c-accordion__toggle__indicator svg {
+  fill: currentColor;
+  transition: transform 0.25s ease-in-out;
+  transform-origin: center;
+}
+
+.c-accordion__content {
+  display: none;
+  padding: 14px 12px;
+}

@@ -1,0 +1,31 @@
+{% set recent_posts = blog_recent_posts(module.blog_field, 3) %}
+
+<div class="grid grid-cols-3 gap-6">
+  {% for post in recent_posts %}
+    <div class="post-item c-blog-tile">
+      <a class="text-copy hover:text-copy" href="{{ post.absolute_url }}">
+        <img src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}" />
+        <div class="px-6 pt-6">
+          <div class="text-2xl leading-normal font-bold">
+            {{ post.html_title }}
+          </div>
+          <div class="text-xl leading-normal mt-2 c-blog-tile__desc">
+            {{ post.post_list_content }} 
+          </div>
+        </div>
+      </a>
+      <div class="px-6">
+        <div class="mt-6 mb-4 text-xl leading-normal">
+          {{ format_datetime(post.publish_date, "dd MMM yyyy") }}
+        </div>
+        <div>
+          {% if post.tag_list %} 
+            {% for tag in post.tag_list %}
+              <span class="text-lg text-link">{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

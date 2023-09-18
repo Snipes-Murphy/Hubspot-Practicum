@@ -1,0 +1,37 @@
+{% set screens = {"xs": 0, "sm": 576, "md": 768, lg: 992, xl: 1200 } %}
+{% require_css %}
+  <style>
+    {% scope_css %}
+      {% for screen in screens.keys() %}
+        {% if screens[screen] > 0 %}
+          @media (min-width: {{screens[screen]}}px) {
+        {% endif %}
+        .grid {
+          gap: {{ module.style.column_gap[screen] }}px;
+          grid-template-columns: repeat({{ module.style.columns_per_row[screen] }}, 1fr);
+        }
+        {% if screens[screen] > 0 %}
+          }
+        {% endif %}
+      {% endfor %}
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<div>
+  <div class="grid grid-cols-2 gap-8">
+    {% for item in blog_recent_posts(module.blog_field, module.max_items) %}
+      <a href="{{ content_by_id(item.page_field).absolute_url }}" class="group">
+        <div class="relative">
+          <div class="overflow-hidden">
+            <img src="{{ item.featured_image }}" alt="{{ item.featured_image_alt_text }}" class="group-hover:scale-105 transition duration-300">
+          </div>
+          <div class="absolute bottom-0 p-8 text-copy max-w-[540px]">
+            <div class="text-xl leading-normal">{% inline_text field="title" value="{{ item.title }}" %}</div>
+            <h2 class="mt-1">{% inline_text field="title" value="{{ item.title }}" %}</h2>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="c-hero-banner relative m-hero-banner h-screen">
+	<div class="px-4 flex items-center justify-center h-full overflow-hidden text-primary">
+		<div class="u-embed-item overflow-hidden z-10 m-overlay">
+			{% if module.background_video.player_id %}
+				{% set max_width = module.background_video.size_type == 'auto_custom_max' ? module.background_video.max_width : module.background_video.width %}
+				{% set max_height = module.bacground_video.size_type == 'auto_custom_max' ? module.background_video.max_height : module.background_video.height %}
+				<div class="relative top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+					{% video_player "embed_player"
+						player_id={{ module.background_video.player_id }}
+						type={{ module.background_video.player_type || 'scriptV4' }}
+						full_width={{ module.background_video.size_type == 'auto_full_width' }},
+						conversion_asset={{ module.background_video.conversion_asset|tojson|safe }}
+						autoplay={{ module.background_video.autoplay }}
+						hidden_controls={{ module.background_video.hide_controls }}
+						loop={{ module.background_video.loop_video }}
+						muted={{ module.background_video.mute_by_default }}
+					%}
+				</div>
+			{% endif %}
+			{% if module.background_image.src %}
+				{% set sizeAttrs = 'width="{{ module.background_image.width }}" height="{{ module.background_image.height }}"' %}
+				{% if module.background_image.size_type == 'auto' %}
+					{% set sizeAttrs = 'width="{{ module.background_image.width }}" height="{{ module.background_image.height }}"' %}
+				{% elif module.background_image.size_type == 'auto_custom_max' %}
+					{% set sizeAttrs = 'width="{{ module.background_image.max_width }}" height="{{ module.background_image.max_height }}"' %}
+				{% endif %}
+				{% set loadingAttr = module.background_image.loading != 'disabled' ? 'loading="{{ module.background_image.loading }}"' : '' %}
+				<img src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }} class="w-full h-full object-cover">
+			{% endif %}
+		</div>
+		<div class="relative content-wrap z-[11]">
+			<div class="max-w-3/4 w-full">
+				<h1 class="text-white font-black text-4xl md:text-5xl lg:text-6xl">
+					{% inline_text field="title" value="{{ module.title }}" %}
+				</h1>
+			</div>
+		</div>
+		
+	</div>
+</div>

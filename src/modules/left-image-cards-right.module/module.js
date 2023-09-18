@@ -1,0 +1,1 @@
+(()=>{var o,l;o=document.getElementById("fixed-img"),l=window.scrollY,window.onscroll=function(){var c=window.scrollY;console.log(l,c),c<253?o.classList.remove("active"):o.classList.add("active")}})();

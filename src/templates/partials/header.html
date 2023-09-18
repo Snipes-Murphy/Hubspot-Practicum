@@ -5,6 +5,12 @@
 -->
 <!-- Begin partial -->
 
-<h1>I am header global partial</h1>
+<div class="bg-slate-200 p-12">
+    {% module "page_template_logo" path="@hubspot/logo" label="Logo" %}
+    {% dnd_area "header"
+    %}
+
+    {% end_dnd_area %}
+</div>
 
 <!-- End partial -->

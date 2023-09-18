@@ -1,0 +1,53 @@
+{# Module styles #}
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+
+      {# Button wrapper #}
+
+      {% if module.styles.alignment.alignment %}
+        .button-wrapper {
+          text-align: {{ module.styles.alignment.alignment.horizontal_align }};
+        }
+      {% endif %}
+
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+{# Sets attributes used for the link field #}
+
+{% set href = module.link.url.href %}
+{% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if module.link.no_follow %}
+  {% do rel.append("nofollow") %}
+{% endif %}
+{% if module.link.open_in_new_tab %}
+  {% do rel.append("noopener") %}
+{% endif %}
+
+{# Button #}
+
+{# Set button classes based on button_color #}
+{% set btnClass = "" %}
+{% if module.styles.button_color is equalto "primary" %}
+  {% set btnClass = "text-white bg-primary"%}
+{% endif %}
+{% if module.styles.button_color is equalto "dark_outline" %}
+  {% set btnClass = "text-purple-900 bg-transparent border-2 border-purple-900 hover:bg-purple-900 hover:text-white disabled:opacity-30" %}
+{% endif %}
+{% if module.styles.button_color is equalto "light_outline" %}
+  {% set btnClass = "text-white border-2 border-white hover:bg-white hover:text-purple-900 bg-transparent border-current hover:text-grey-300 disabled:opacity-30" %}
+{% endif %}
+
+<div class="button-wrapper">
+  <a class="rounded-md inline-block px-10 py-3 text-lg font-medium duration-300 {{ btnClass }}" href="{{ href }}"
+  {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+  {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+  >
+    {{ module.button_text }}
+  </a>
+</div>

@@ -43,5 +43,55 @@
         }
       }
     ]
-  }
+  },
+	{
+		"label": "Global fonts",
+		"name": "global_fonts",
+		"type": "group",
+		"children": [
+			{
+				"label": "Primary",
+				"name": "primary",
+				"type": "font",
+				"visibility": {
+					"hidden_subfields": {
+						"size": true,
+						"styles": true,
+						"color": true
+					}
+				},
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "theme.global_colors.primary.color"
+					}
+				},
+				"default": {
+					"fallback": "sans-serif",
+					"font": "Montserrat",
+					"font_set": "GOOGLE"
+				}
+			},
+			{
+				"label": "Secondary",
+				"name": "secondary",
+				"type": "font",
+				"visibility": {
+					"hidden_subfields": {
+						"size": true,
+						"styles": true,
+						"color": true
+					}
+				},
+				"inherited_value": {
+					"property_value_paths": {
+						"color": "theme.global_colors.primary.color"
+					}
+				},
+				"default": {
+					"fallback": "sans-serif",
+					"font": "transat-text"
+				}
+			}
+		]
+	}
 ]

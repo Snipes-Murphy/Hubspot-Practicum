@@ -1,0 +1,50 @@
+[ {
+  "id" : "8895baf9-7821-0d55-7b0b-bb6e83633338",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Heading"
+}, {
+  "id" : "e3946302-70ad-94ba-fb74-64bad9ee1f76",
+  "name" : "background_video",
+  "display_width" : null,
+  "label" : "Background Video",
+  "required" : false,
+  "locked" : false,
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : true,
+  "type" : "videoplayer"
+}, {
+  "id" : "1fb61ba4-11c6-aeb2-ac97-140311e842e0",
+  "name" : "background_image",
+  "display_width" : null,
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "background_video",
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "EMPTY",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

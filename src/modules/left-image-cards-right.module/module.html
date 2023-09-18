@@ -1,0 +1,42 @@
+<div class="grid xl:grid-cols-2 grid-cols-1 gap-4 mt-8">
+  <div class="xl:block hidden">
+    <div class="image-wrapper" id="fixed-img">
+      {% if module.image_field.src %}
+        {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+        {% if module.image_field.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.image_field.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+        <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+    </div>
+  </div>
+  <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+    {% for item in module.field_group %}
+      <div class="grid-cols-1 border border-grey-200 px-7 pb-7">
+        {% if item.image_field_1.src %}
+          <div class="max-w-[50%]">
+            {% set sizeAttrs = 'width="{{ item.image_field_1.width }}" height="{{ item.image_field_1.height }}"' %}
+            {% if item.image_field_1.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field_1.width }}" height="{{ item.image_field_1.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field_1.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field_1.max_width }}" height="{{ item.image_field_1.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image_field_1.loading != 'disabled' ? 'loading="{{ item.image_field_1.loading }}"' : '' %}
+            <img src="{{ item.image_field_1.src }}" alt="{{ item.image_field_1.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          </div>
+        {% endif %}
+        <div>
+          <div class="text-2xl font-bold">
+            {% inline_text field="text_field" value="{{ item.text_field }}" %}
+          </div>
+          <div class="text-xl">
+            {% inline_rich_text field="richtext_field" value="{{ item.richtext_field }}" %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

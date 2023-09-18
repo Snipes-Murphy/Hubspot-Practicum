@@ -1,0 +1,61 @@
+[ {
+  "id" : "893f420c-d117-7d45-a2e8-698a119f7277",
+  "name" : "social_links",
+  "display_width" : null,
+  "label" : "Social Links",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "6540310f-a795-c334-a71b-c86f1e95da13",
+    "name" : "platform",
+    "display_width" : null,
+    "label" : "Platform",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "facebook-f", "Facebook" ], [ "linkedin-in", "LinkedIn" ], [ "twitter", "Twitter" ], [ "instagram", "Instagram" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
+  }, {
+    "id" : "678720de-f3b9-e5a2-c5e5-12f876fd47e9",
+    "name" : "platform_link",
+    "display_width" : null,
+    "label" : "Platform Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "platform_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+} ]

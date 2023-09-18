@@ -1,0 +1,21 @@
+<!-- module html  -->
+ <div class="c-accordion-list">
+   {% for accordion in module.accordions %}
+      <div class="c-accordion js-accordion">
+        <button class="c-accordion__toggle js-accordion__toggle">
+          <span class="c-accordion__toggle__label">{{ accordion.accordion_label }}</span>
+          {% if module.disable_indicator == false %}
+            <span class="c-accordion__toggle__indicator">
+              <svg width="14" height="9" viewBox="0 0 14 9" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.57733 0.910826C0.902766 0.585389 1.4304 0.585389 1.75584 0.910826L6.99992 6.1549L12.244 0.910826C12.5694 0.585389 13.0971 0.585389 13.4225 0.910826C13.7479 1.23626 13.7479 1.7639 13.4225 2.08934L7.58917 7.92267C7.26374 8.24811 6.7361 8.24811 6.41066 7.92267L0.57733 2.08934C0.251893 1.7639 0.251893 1.23626 0.57733 0.910826Z" />
+              </svg>
+            </span>
+          {% endif %}
+          
+        </button>
+        <div class="c-accordion__content">
+          {{ accordion.accordion_content }}
+        </div>
+      </div>
+   {% endfor %}
+ </div>

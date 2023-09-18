@@ -1,0 +1,22 @@
+.image-row-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.image-row-wrapper img:not(:last-child) {
+  margin-right: 35px;
+}
+
+@media only screen and (max-width: 575px) {
+  .image-row-wrapper {
+    flex-flow: column;
+    margin-top: 20px;
+  }
+  
+  .image-row-wrapper img:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 35px;
+  }
+}

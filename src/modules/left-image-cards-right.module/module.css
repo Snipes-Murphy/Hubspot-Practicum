@@ -1,0 +1,7 @@
+.image-wrapper.active {
+    position: fixed;
+    top: 32px;
+    transition: top 0.3s ease-in-out 0s;
+    z-index: 1;
+    max-width: 597px;
+}

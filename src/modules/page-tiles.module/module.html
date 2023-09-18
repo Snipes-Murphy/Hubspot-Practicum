@@ -1,0 +1,44 @@
+{% set screens = {"xs": 0, "sm": 576, "md": 768, lg: 992, xl: 1200 } %}
+{% require_css %}
+	<style>
+		{% scope_css %}
+			{% for screen in screens.keys() %}
+				{% if screens[screen] > 0 %}
+					@media (min-width: {{screens[screen]}}px) {
+				{% endif %}
+				.grid {
+					gap: {{ module.style.column_gap[screen] }}px;
+					grid-template-columns: repeat({{ module.style.columns_per_row[screen] }}, 1fr);
+				}
+				{% if screens[screen] > 0 %}
+					}
+				{% endif %}
+			{% endfor %}
+		{% end_scope_css %}
+	</style>
+{% end_require_css %}
+
+<div class="grid">
+	{% for item in module.tile_group %}
+		<a href="{{ content_by_id(item.page_field).absolute_url }}" class="group">
+			<div class="relative">
+				<div class="overflow-hidden">
+					{% if item.page_image.src %}
+						{% set sizeAttrs = 'width="{{ item.page_image.width }}" height="{{ item.page_image.height }}"' %}
+						{% if item.page_image.size_type == 'auto' %}
+							{% set sizeAttrs = 'width="{{ item.page_image.width }}" height="{{ item.page_image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item.page_image.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="{{ item.page_image.max_width }}" height="{{ item.page_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item.page_image.loading != 'disabled' ? 'loading="{{ item.page_image.loading }}"' : '' %}
+						<img src="{{ item.page_image.src }}" alt="{{ item.page_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }} class="group-hover:scale-105 transition duration-300">
+					{% endif %}
+				</div>
+				<div class="absolute bottom-0 p-8 text-copy max-w-[540px]">
+					<div class="text-xl leading-normal">{% inline_text field="top_text" value="{{ item.top_text }}" %}</div>
+					<div class="h3 leading-normal mt-1">{% inline_text field="title" value="{{ item.title }}" %}</div>
+				</div>
+			</div>
+		</a>
+	{% endfor %}
+</div>

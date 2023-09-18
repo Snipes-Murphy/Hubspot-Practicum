@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+{% set total_columns_count = 12 %}
+{% set primary_font = theme.global_fonts.primary %}
+
+body {
+  font-family: {{ primary_font.font }};
+}
+
+/* CSS variables */
+
+ 
+
+:root {
+  --column-gap: 2.13%;
+  --column-width-multiplier: 8.333;
+}
+
+ 
+
+/* Mobile layout */
+
+ 
+
+.row-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+ 
+
+{% for span_num in range(1, total_columns_count + 1) %}
+  {{ ".row-fluid .span" ~ span_num }}{{ loop.last ? null : "," }}
+{%- endfor -%} {
+  min-height: 1px;
+  width: 100%;
+}
+
+ 
+
+/* Desktop layout */
+
+ 
+
+@media (min-width: 768px) {
+  .row-fluid {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+ 
+
+  {% for span_num in range(1, total_columns_count) %}
+    {{ ".row-fluid .span" ~ span_num }} {
+      width: calc(var(--column-width-multiplier) * 1% * {{ span_num  }} - var(--column-gap) * ({{ total_columns_count - span_num }} * var(--column-width-multiplier) / 100));
+    }
+  {% endfor %}
+}
+
+:root {
+
+  /*  Colors  */
+  {% for key in theme.global_colors.keys() | sort %}
+    {% set color = theme.global_colors[key].color %}
+    {% if color %}
+      --hs-color-{{ key }}: {{ color }};
+    {% endif %}
+  {% endfor %}
+  
+  /*  Font family  */
+  {% for key in theme.global_fonts.keys() | sort %}
+    {% set obj = theme.global_fonts[key].styles %}
+    {% if obj['font-family'] %}
+      --hs-fontfamily-{{ key }}: {{ obj['font-family'] }};
+    {% endif %}
+     {% for prop in obj.keys() %}
+      {% if obj[prop] %}
+        --hs-fontfamily-{{prop}}-{{ key }}: {{ obj[prop] }};
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+}

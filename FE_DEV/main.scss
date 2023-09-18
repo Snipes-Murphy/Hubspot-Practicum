@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  .test {
-    background-color: red;
-  }
+@use 'hubspot-cms.css';
+
+h1 {
+  @apply text-3xl lg:text-4xl;
+}
+
+h2 {
+  @apply text-xl md:text-2xl lg:text-3xl font-bold;
 }
