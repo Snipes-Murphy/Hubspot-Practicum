@@ -58,9 +58,10 @@ module.exports = {
 				...themeFields.fontFamily
 			},
 			fontSize: {
-				"7xl": ["110px", "1"],
-				"6xl": ["80px", "1.1"],
-				"5xl": ["64px", "1.2"],
+				"8xl": ["110px", "1"],
+				"7xl": ["80px", "1.1"],
+				"6xl": ["64px", "1.2"],
+				"5xl": ["48px", "1.2"],
 				"4xl": ["36px", "1.55"],
 				"3xl": ["28px", "1.5"],
 				"2xl": ["24px", "1.6"],
@@ -83,5 +84,6 @@ module.exports = {
 		require('tailwind-bootstrap-grid')({
 			generateContainer: false
 		}),
+    require('@tailwindcss/typography'),
 	],
 }

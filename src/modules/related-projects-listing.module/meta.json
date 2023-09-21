@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE", "BLOG_POST" ],
+  "module_id" : 135882288291,
+  "label" : "Related Projects Listing",
+  "is_available_for_new_content" : true
+}

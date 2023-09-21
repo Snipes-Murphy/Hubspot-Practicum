@@ -1,0 +1,29 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Services Post - NEW
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="body-container body-container--blog-post">
+
+  {# Blog post #}
+
+  <article>
+    <div class="py-12 bg-white">
+      <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
+        <div class="text-center">
+          <span class="text-lg lg:text-xl">{{ content.name }}</span>
+          <h1 class="font-bold mt-2 text-5xl md:text-6xl lg:text-7xl">{{ content.name }}</h1>
+          <img class="mt-24" src="{{ content.featured_image }}" alt="{{content.feature_image_alt}}">
+        </div>
+      </div>
+    </div>
+    <div  class="blog-post__body">
+      {{ content.post_body }}
+    </div>
+  </article>
+</div>
+{% endblock body %}

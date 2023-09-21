@@ -3,39 +3,18 @@
     label: Page template
     isAvailableForNewContent: true
 -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ content.html_title }}</title>
-    <meta name="description" content="{{ content.meta_description }}">
-    {{ require_css(get_asset_url("../dist/main.css")) }}
-    {{ require_css(get_asset_url("../css/hubspot-cms.css")) }}
-    {{ standard_header_includes }}
-  </head>
-  <body>
-    <div>
-      {% block header %}
-        {% global_partial path="./partials/header.html" %}
-      {% endblock header %}
+{% extends "./layouts/base.html" %}
 
-      {% include_dnd_partial path="../sections/hero-banner.html"
-        context={
-          "backgroundColor": "red",
-          "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis optio laudantium, assumenda rem veniam sit. Dicta vitae officiis harum aspernatur dignissimos doloribus, debitis cum, voluptatem autem, similique expedita officia possimus?</p>"
-        }
-       %}
+{% block body %}
+{% include_dnd_partial path="../sections/hero-banner.html"
+  context={
+    "backgroundColor": "red",
+    "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis optio laudantium, assumenda rem veniam sit. Dicta vitae officiis harum aspernatur dignissimos doloribus, debitis cum, voluptatem autem, similique expedita officia possimus?</p>"
+  }
+  %}
 
-      {% dnd_area "dnd_area"
-        label="Main section"
-      %}
-      {% end_dnd_area %}
-
-      {% block footer %}
-        {% global_partial path="./partials/footer.html" %}
-      {% endblock footer %}
-
-      {{ standard_footer_includes }}
-    </div>
-  </body>
-</html>
+{% dnd_area "dnd_area"
+  label="Main section"
+%}
+{% end_dnd_area %}
+{% endblock body %}

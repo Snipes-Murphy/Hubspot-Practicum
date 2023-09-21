@@ -2,5 +2,6 @@
   "global" : false,
   "host_template_types" : [ "PAGE" ],
   "module_id" : 135381507654,
+  "label" : "Projects Listing",
   "is_available_for_new_content" : true
 }

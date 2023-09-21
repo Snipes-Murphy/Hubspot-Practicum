@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "../../images/module-icons/cta.svg",
+  "host_template_types" : [ "BLOG_POST" ],
+  "module_id" : 135714238987,
+  "label" : "Sticky Showcase",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,51 @@
+<!-- custom widget definition not found (portalId: 22127437, path: /webcoda-theme-new/modules/blog-hightlighted-image-text, moduleId: 112799933213) -->
+<div style="background-color: {{ module.background.color }}">
+  <div class="max-w-[1350px] mx-auto lg:py-14 py-6 px-2 lg:px-4">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        {% if module.image_field.src %}
+          {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+          {% if module.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+          <img src="{{ module.image_field.src }}" class="sticky top-8" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+      <div>
+        <div class="grid grid-cols-2 gap-8">
+          {% for item in module.service %}
+            {% set href = item.link_field.url.href %}
+            {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}
+            <a href="{{ href }}"
+              {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+              {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+               class="space-y-4 px-8 pb-8 border border-grey-200 block"
+              >
+              {% if item.service_image.src %}
+                {% set sizeAttrs = 'width="{{ item.service_image.width }}" height="{{ item.service_image.height }}"' %}
+                {% if item.service_image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.service_image.width }}" height="{{ item.service_image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.service_image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.service_image.max_width }}" height="{{ item.service_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.service_image.loading != 'disabled' ? 'loading="{{ item.service_image.loading }}"' : '' %}
+                <img src="{{ item.service_image.src }}" class="w-32 h-32" alt="{{ item.service_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+              <div class="text-xl lg:text-2xl font-bold">
+                {% inline_text field="heading" value="{{ item.heading }}" %}
+              </div>
+              <div class="md:text-lg lg:text-xl">
+                {% inline_rich_text field="richtext_field" value="{{ item.richtext_field }}" %}
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

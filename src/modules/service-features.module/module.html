@@ -1,0 +1,55 @@
+<!-- custom widget definition not found (portalId: 22127437, path: /webcoda-theme-new/modules/blog-hightlighted-image-text, moduleId: 112799933213) -->
+
+{% require_css %}
+  <style>
+  {% scope_css %}
+    {% if module.divider_color %}
+      .service-features-divider {
+        border-bottom: 1px solid {{ module.divider_color.color }};
+      }
+      .service-features-divider:last-of-type {
+        border: none !important;
+      }
+    {% endif %}
+
+  {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<div style="background-color: {{ module.background.color }}; color: {{ module.text_color.color }}">
+  <div class="max-w-[1350px] mx-auto lg:py-14 py-6 px-2 lg:px-4">
+    <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+      <div class="prose prose-p:md:text-lg prose-p:md:text-xl prose-p:lg:text-2xl" style="color: inherit !important;">
+        <div class="sticky top-8">
+          {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+        </div>
+      </div>
+      <div>
+        <div class="grid gap-8">
+          {% for item in module.feature %}
+            <div
+               class="space-y-4 service-features-divider pb-8 block"
+              >
+              {% if item.image.src %}
+                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                {% if item.image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                <img src="{{ item.image.src }}" class="w-20 h-20" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+              <div class="text-xl lg:text-2xl font-bold">
+                {% inline_text field="heading" value="{{ item.heading }}" %}
+              </div>
+              <div class="md:text-lg lg:text-xl">
+                {% inline_rich_text field="richtext_field" value="{{ item.richtext_field }}" %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

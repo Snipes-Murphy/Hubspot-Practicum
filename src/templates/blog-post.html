@@ -1,10 +1,9 @@
 <!--
   templateType: blog_post
   isAvailableForNewContent: true
-  label: Boilerplate - blog post
+  label: Blog Post - NEW
   screenshotPath: ../images/template-previews/blog-post.png
 -->
-{% set template_css = "../../css/templates/blog.css" %}
 {% extends "./layouts/base.html" %}
 
 {% block body %}
@@ -12,78 +11,65 @@
 
   {# Blog post #}
 
-  <div class="content-wrapper">
-    <article class="blog-post">
-      <h1>{{ content.name }}</h1>
-      <div class="blog-post__meta">
-        <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author">
-          {{ content.blog_post_author.display_name }}
-        </a>
-        <time datetime="{{ content.publish_date }}" class="blog-post__timestamp">
-          {{ content.publish_date_localized }}
-        </time>
-      </div>
-      <div class="blog-post__body">
-        {{ content.post_body }}
-      </div>
-      {% if content.tag_list %}
-        <div class="blog-post__tags">
-          {% icon
-            name="tag",
-            purpose="decorative",
-            style="SOLID"
-          %}
-          {% for tag in content.tag_list %}
-            <a class="blog-post__tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
-          {% endfor %}
+  <article>
+    <div class="py-12 bg-white">
+      <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
+        <div class="grid grid-cols-4">
+          <div class="col-span-3">
+            <span class="text-lg lg:text-xl">{{ content.name }}</span>
+            <h1 class="font-bold mt-2 text-5xl md:text-6xl lg:text-7xl">{{ content.name }}</h1>
+          </div>
+          <div class="border-l border-grey-200 space-y-1 px-4">
+            {% for tag in blog_tags(content, 250) %}
+              <a class="block hover:underline" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
         </div>
-      {% endif %}
-    </article>
-    {% if group.allow_comments %}
-      <div class="blog-comments">
-        {% module "blog_comments"
-          path="@hubspot/blog_comments",
-          label="Blog comments"
-        %}
       </div>
-    {% endif %}
-  </div>
+    </div>
+    {# <div class="">
+      <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author">
+        {{ content.blog_post_author.display_name }}
+      </a>
+      <time datetime="{{ content.publish_date }}" class="blog-post__timestamp">
+        {{ content.publish_date_localized }}
+      </time>
+    </div> #}
+    <div  class="blog-post__body">
+      {{ content.post_body }}
+    </div>
+  </article>
 
   {# Recent posts listing #}
 
   {# This macro is used to format each recent post card and gets passed to the related_blog_posts HubL tag below #}
 
   {% macro related_posts(post, count, total) %}
-    {% if count == 1 %}
-      <section class="blog-related-posts">
-        <div class="content-wrapper">
-          <h2>Read On</h2>
-          <div class="blog-related-posts__list">
-    {% endif %}
-            <article class="blog-related-posts__post" aria-label="Blog post summary: {{ post.name }}">
-              {% if post.featured_image %}
-                <a class="blog-related-posts__post-image-wrapper" href="{{ post.absolute_url }}" aria-label="{% if post.featured_image_alt_text %} Featured image: {{ post.featured_image_alt_text }} - {% endif %}Read full post: {{ post.name }}">
-                  <img class="blog-related-posts__image" src="{{ post.featured_image }}" loading="lazy" width="352" alt="{{ post.featured_image_alt_text }}">
-                </a>
-              {% endif %}
-              <div class="blog-related-posts__content">
-                <h3 class="blog-related-posts__title">
-                  <a class="blog-related-posts__title-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
-                {{ post.post_summary|truncatehtml(100) }}
-              </div>
-            </article>
-      {% if count == total %}
-          </div>
+    <a href="{{ post.absolute_url }}" class="group">
+      <div class="relative">
+        <div class="overflow-hidden">
+          <img src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}" class="group-hover:scale-105 transition duration-300">
         </div>
-      </section>
-    {% endif %}
+        <div class="absolute bottom-0 p-8 text-copy max-w-[540px]">
+          <div class="text-xl leading-normal">{% inline_text field="title" value="{{ post.name }}" %}</div>
+          <h2 class="mt-1">{% inline_text field="title" value="{{ post.name }}" %}</h2>
+        </div>
+      </div>
+    </a>
   {% endmacro %}
 
-  {% related_blog_posts
-    limit=3,
-    no_wrapper=True,
-    post_formatter="related_posts"
-  %}
+
+
+  <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
+    <h2 class="mb-4">Explore more projects</h2>
+    <div class="grid grid-cols-2 gap-8">
+      {% related_blog_posts
+        limit=3,
+        no_wrapper=True,
+        post_formatter="related_posts"
+      %}
+    </div>
+  </div>
 
 </div>
 {% endblock body %}

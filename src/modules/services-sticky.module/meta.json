@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "../../images/module-icons/cta.svg",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 135860823668,
+  "label" : "Sticky Services",
+  "is_available_for_new_content" : true
+}
