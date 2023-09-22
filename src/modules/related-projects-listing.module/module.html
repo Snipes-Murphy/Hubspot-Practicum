@@ -28,7 +28,7 @@
   <div style="background-color: {{ module.background_color.color }}; color: {{ module.text_color.color }}">
     <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
       <div class="grid grid-cols-2 gap-8">
-        {% for item in blog_recent_tag_posts(module.blog_field, module.tag_field, module.max_items, "OR") %}
+        {% for item in module.tag_field ? blog_recent_tag_posts(module.blog_field, module.tag_field, module.max_items, "OR") : blog_recent_posts(module.blog_field, module.max_items) %}
           <a href="{{ item.absolute_url }}" class="group block p-8" style="background-color: {{ module.box_color.color }}">
             <div class="relative flex">
               <div class="overflow-hidden aspect-square w-40 h-40 p-4">

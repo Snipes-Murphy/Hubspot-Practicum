@@ -21,7 +21,7 @@
 <div>
   <div class="grid grid-cols-2 gap-8">
     {% for item in blog_recent_posts(module.blog_field, module.max_items) %}
-      <a href="{{ content_by_id(item.page_field).absolute_url }}" class="group">
+      <a href="{{ item.absolute_url }}" class="group">
         <div class="relative">
           <div class="overflow-hidden">
             <img src="{{ item.featured_image }}" alt="{{ item.featured_image_alt_text }}" class="group-hover:scale-105 transition duration-300">

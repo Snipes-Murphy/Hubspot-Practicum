@@ -18,13 +18,22 @@
   </style>
 {% end_require_css %}
 
+{% set grid_columns = "" %}
+{% if module.columns == "1" %}
+  {% set grid_columns = "grid-cols-1" %}
+{% elif module.columns == "2" %}
+  {% set grid_columns = "md:grid-cols-2" %}
+{% elif module.columns == "3" %}
+  {% set grid_columns = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" %}
+{% endif %}
+
 <div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="grid gap-8 {{ grid_columns }}">
     {% for item in blog_recent_posts(module.blog_field, module.max_items) %}
       <div class="group">
-        <a href="{{ content_by_id(item.page_field).absolute_url }}" class="relative">
+        <a href="{{ item.absolute_url }}" class="relative">
           <div class="overflow-hidden">
-            <img src="{{ item.featured_image }}" alt="{{ item.featured_image_alt_text }}" class="group-hover:scale-105 transition duration-300">
+            <img src="{{ item.featured_image }}" alt="{{ item.featured_image_alt_text }}" class="group-hover:scale-105 aspect-video object-cover transition duration-300">
           </div>
           <div class="p-8 text-copy max-w-[540px]">
             <h2>{% inline_text field="title" value="{{ item.title }}" %}</h2>

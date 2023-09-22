@@ -1,0 +1,98 @@
+[ {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2ed3aefa-86d7-9787-f8d0-a791f7835860",
+    "name" : "button_color",
+    "display_width" : null,
+    "label" : "Button color",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "primary", "Primary" ], [ "dark_outline", "Dark Outline" ], [ "light_outline", "Light Outline" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "primary"
+  }, {
+    "id" : "styles.alignment",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.alignment.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "HORIZONTAL",
+      "type" : "alignment",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "alignment" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_color" : "primary",
+    "alignment" : {
+      "alignment" : { }
+    }
+  }
+}, {
+  "id" : "13241b88-c0ca-24de-10da-5b15580bdfba",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
+  "id" : "0b134a49-1b79-c0e0-5ce4-4317e8661d68",
+  "name" : "link_field",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "80057985-53c4-ab71-7b6b-d33bbcf2d5d9",
+  "name" : "button_text",
+  "display_width" : null,
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

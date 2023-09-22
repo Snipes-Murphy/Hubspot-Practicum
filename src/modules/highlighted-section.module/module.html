@@ -1,0 +1,25 @@
+{% set href = module.link.url.href %}
+  {% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+  {% set rel = [] %}
+  {% if module.link.no_follow %}
+    {% do rel.append("nofollow") %}
+  {% endif %}
+  {% if module.link.open_in_new_tab %}
+    {% do rel.append("noopener") %}
+  {% endif %}
+
+<div class="bg-primary">
+  <div class="max-w-[1350px] prose prose-p:md:text-lg prose-p:lg:text-xl mx-auto lg:py-14 py-6 lg:px-8 px:px-6 text-center">
+    <h2 class="text-white font-normal text-2xl md:text-3xl lg:text-4xl">
+      {% inline_text field="heading" value="{{ module.heading }}" %}
+    </h2>
+    <a class="rounded-md no-underline inline-block px-10 py-3 text-lg font-medium duration-300 text-white border-2 border-white hover:bg-white hover:text-purple-900 bg-transparent border-current hover:text-grey-300 disabled:opacity-30" href="{{ href }}"
+      {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+      {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+      >
+        {{ module.button_text }}
+    </a>
+  </div>
+</div>
