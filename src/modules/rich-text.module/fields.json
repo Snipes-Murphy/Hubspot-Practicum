@@ -72,6 +72,16 @@
   "type" : "boolean",
   "default" : false
 }, {
+  "id" : "25232545-22cc-3c79-2e60-2ac44fbc90da",
+  "name" : "no_padding",
+  "display_width" : null,
+  "label" : "No Padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
   "id" : "91427d73-8eb2-561c-3010-d834c2496597",
   "name" : "centered",
   "display_width" : null,

@@ -1,65 +1,20 @@
 [ {
-  "id" : "bff36a9d-a52e-5c6a-1663-c6435a0b3cb6",
-  "name" : "field_group",
+  "id" : "0a978b88-fa73-3c94-9589-b89e9a86e425",
+  "name" : "blog",
   "display_width" : null,
-  "label" : "Tile group",
+  "label" : "Blog",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : null,
-    "default" : null
-  },
-  "children" : [ {
-    "id" : "82b50bf2-3a07-1dd9-7385-4ac2b66ee4a1",
-    "name" : "icon",
-    "display_width" : null,
-    "label" : "Icon",
-    "required" : true,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://22127437.fs1.hubspotusercontent-na1.net/hubfs/22127437/development.svg",
-      "alt" : "development",
-      "loading" : "lazy",
-      "width" : 240,
-      "height" : 240,
-      "max_width" : 240,
-      "max_height" : 240
-    }
-  }, {
-    "id" : "0482fe73-e9ef-26af-d5ae-9a2adf586530",
-    "name" : "icon_label",
-    "display_width" : null,
-    "label" : "Icon Label",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "placeholder" : "Enter a label...",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Label"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "icon" : {
-      "size_type" : "auto",
-      "src" : "https://22127437.fs1.hubspotusercontent-na1.net/hubfs/22127437/development.svg",
-      "alt" : "development",
-      "loading" : "lazy",
-      "width" : 240,
-      "height" : 240,
-      "max_width" : 240,
-      "max_height" : 240
-    },
-    "icon_label" : "Label"
-  }
+  "type" : "blog",
+  "default" : 135862451357
+}, {
+  "id" : "8ac61544-348b-cdd2-8546-458ad6dbfc04",
+  "name" : "max_items",
+  "display_width" : null,
+  "label" : "Max Items",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number"
 } ]

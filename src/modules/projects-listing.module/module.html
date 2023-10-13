@@ -19,7 +19,7 @@
 {% end_require_css %}
 
 <div>
-  <div class="grid grid-cols-2 gap-8">
+  <div class="grid gap-8">
     {% for item in blog_recent_posts(module.blog_field, module.max_items) %}
       <a href="{{ item.absolute_url }}" class="group">
         <div class="relative">

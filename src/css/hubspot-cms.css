@@ -2,9 +2,271 @@
 
 {% set total_columns_count = 12 %}
 {% set primary_font = theme.global_fonts.primary %}
+  
+/* 1c. Typography */
+
+{% set primary_font = theme.global_fonts.primary %}
+{% set secondary_font = theme.global_fonts.secondary %}
+
+{% set h1_font = theme.text.h1.font %}
+{% set h1_text_transform = theme.text.h1.transform %}
+
+{% set h2_font = theme.text.h2.font %}
+{% set h2_text_transform = theme.text.h2.transform %}
+
+{% set h3_font = theme.text.h3.font %}
+{% set h3_text_transform = theme.text.h3.transform %}
+
+{% set h4_font = theme.text.h4.font %}
+{% set h4_text_transform = theme.text.h4.transform %}
+
+{% set h5_font = theme.text.h5.font %}
+{% set h5_text_transform = theme.text.h5.transform %}
+
+{% set h6_font = theme.text.h6.font %}
+{% set h6_text_transform = theme.text.h6.transform %}
+
+{% set body_font = theme.text.body_font.font %}
+
+{% set anchor_font = theme.text.links.font %}
 
 body {
   font-family: {{ primary_font.font }};
+}
+
+{###########################################################################}
+{###########################   3. Typography   #############################}
+{###########################################################################}
+
+html {
+  font-size: {{ body_font.size ~ body_font.size_unit }};
+}
+
+body {
+  {{ body_font.style }};
+  color: {{ body_font.color }};
+  font-size: {{ body_font.size ~ body_font.size_unit }};
+}
+
+/* Paragraphs */
+
+p {
+  {{ body_font.style }};
+}
+
+/* Anchors */
+
+a {
+  {{ anchor_font.style }};
+  color: {{ anchor_font.color }};
+}
+
+a:hover,
+a:focus {
+  {{ anchor_font.style }};
+  color: {{ color_variant(anchor_font.color, -40) }};
+}
+
+a:active {
+  {{ anchor_font.style }};
+  color: {{ color_variant(anchor_font.color, 40) }};
+}
+
+/* Headings */
+
+h1,
+.h1 {
+  {{ h1_font.style }};
+  color: {{ h1_font.color }};
+  font-size: {{ theme.text.h1.xs.size.size ~ theme.text.h1.xs.size.size_unit }};
+  text-transform: {{ h1_text_transform }};
+}
+
+h2,
+.h2 {
+  {{ h2_font.style }};
+  color: {{ h2_font.color }};
+  font-size: {{ theme.text.h2.xs.size.size ~ theme.text.h2.xs.size.size_unit }};
+  text-transform: {{ h2_text_transform }};
+}
+
+h3,
+.h3 {
+  {{ h3_font.style }};
+  color: {{ h3_font.color }};
+  font-size: {{ theme.text.h3.xs.size.size ~ theme.text.h3.xs.size.size_unit }};
+  text-transform: {{ h3_text_transform }};
+}
+
+h4,
+.h4 {
+  {{ h4_font.style }};
+  color: {{ h4_font.color }};
+  font-size: {{ theme.text.h4.xs.size.size ~ theme.text.h4.xs.size.size_unit }};
+  text-transform: {{ h4_text_transform }};
+}
+
+h5,
+.h5 {
+  {{ h5_font.style }};
+  color: {{ h5_font.color }};
+  font-size: {{ theme.text.h5.xs.size.size ~ theme.text.h5.xs.size.size_unit }};
+  text-transform: {{ h5_text_transform }};
+}
+
+h6,
+.h6 {
+  {{ h6_font.style }};
+  color: {{ h6_font.color }};
+  font-size: {{ theme.text.h6.xs.size.size ~ theme.text.h6.xs.size.size_unit }};
+  text-transform: {{ h6_text_transform }};
+}
+
+.text_body_xl {
+  {{ theme.text.text_body_xl.font.style }};
+  color: {{ theme.text.text_body_xl.font.color }};
+  font-size: {{ theme.text.text_body_xl.xs.size.size ~ theme.text.text_body_xl.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_nav_primary.transform }};
+}
+
+.text_body_lg {
+  {{ theme.text.text_body_lg.font.style }};
+  color: {{ theme.text.text_body_lg.font.color }};
+  font-size: {{ theme.text.text_body_lg.xs.size.size ~ theme.text.text_body_lg.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_body_lg.transform }};
+}
+
+.text_body_sm {
+  {{ theme.text.text_body_sm.font.style }};
+  color: {{ theme.text.text_body_sm.font.color }};
+  font-size: {{ theme.text.text_body_sm.xs.size.size ~ theme.text.text_body_sm.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_body_sm.transform }};
+}
+
+.text_body_xs {
+  {{ theme.text.text_body_xs.font.style }};
+  color: {{ theme.text.text_body_xs.font.color }};
+  font-size: {{ theme.text.text_body_xs.xs.size.size ~ theme.text.text_body_xs.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_body_xs.transform }};
+}
+
+.text_btn_lg {
+  {{ theme.text.text_btn_lg.font.style }};
+  color: {{ theme.text.text_btn_lg.font.color }};
+  font-size: {{ theme.text.text_btn_lg.xs.size.size ~ theme.text.text_btn_lg.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_btn_lg.transform }};
+}
+
+.text_btn_md {
+  {{ theme.text.text_btn_md.font.style }};
+  color: {{ theme.text.text_btn_md.font.color }};
+  font-size: {{ theme.text.text_btn_md.xs.size.size ~ theme.text.text_btn_md.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_btn_md.transform }};
+}
+
+.text_btn_sm {
+  {{ theme.text.text_btn_sm.font.style }};
+  color: {{ theme.text.text_btn_sm.font.color }};
+  font-size: {{ theme.text.text_btn_sm.xs.size.size ~ theme.text.text_btn_sm.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_btn_sm.transform }};
+}
+
+.text_nav_primary {
+  {{ theme.text.text_nav_primary.font.style }};
+  color: {{ theme.text.text_nav_primary.font.color }};
+  font-size: {{ theme.text.text_nav_primary.xs.size.size ~ theme.text.text_nav_primary.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_nav_primary.transform }};
+}
+
+.text_nav_primary:hover {
+  {{ theme.text.text_nav_primary.hover.style }};
+  color: {{ theme.text.text_nav_primary.hover.color }};
+  font-size: {{ theme.text.text_nav_primary.hover.size ~ theme.text.text_nav_primary.hover.size_unit }};
+}
+
+.text_nav_secondary {
+  {{ theme.text.text_nav_secondary.font.style }};
+  color: {{ theme.text.text_nav_secondary.font.color }};
+  font-size: {{ theme.text.text_nav_secondary.xs.size.size ~ theme.text.text_nav_secondary.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_nav_secondary.transform }};
+}
+
+.text_nav_secondary:hover {
+  {{ theme.text.text_nav_secondary.hover.style }};
+  color: {{ theme.text.text_nav_secondary.hover.color }};
+  font-size: {{ theme.text.text_nav_secondary.hover.size ~ theme.text.text_nav_secondary.hover.size_unit }};
+}
+
+.text_nav_tertiary {
+  {{ theme.text.text_nav_tertiary.font.style }};
+  color: {{ theme.text.text_nav_tertiary.font.color }};
+  font-size: {{ theme.text.text_nav_tertiary.xs.size.size ~ theme.text.text_nav_tertiary.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_nav_tertiary.transform }};
+}
+
+.text_nav_tertiary:hover {
+  {{ theme.text.text_nav_tertiary.hover.style }};
+  color: {{ theme.text.text_nav_tertiary.hover.color }};
+  font-size: {{ theme.text.text_nav_tertiary.hover.size ~ theme.text.text_nav_tertiary.hover.size_unit }};
+}
+
+.text_nav_quaternary {
+  {{ theme.text.text_nav_quaternary.font.style }};
+  color: {{ theme.text.text_nav_quaternary.font.color }};
+  font-size: {{ theme.text.text_nav_quaternary.xs.size.size ~ theme.text.text_nav_quaternary.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_nav_quaternary.transform }};
+}
+
+.text_nav_quaternary:hover {
+  {{ theme.text.text_nav_quaternary.hover.style }};
+  color: {{ theme.text.text_nav_quaternary.hover.color }};
+  font-size: {{ theme.text.text_nav_quaternary.hover.size ~ theme.text.text_nav_quaternary.hover.size_unit }};
+}
+
+.text_nav_footer {
+  {{ theme.text.text_nav_footer.font.style }};
+  color: {{ theme.text.text_nav_footer.font.color }};
+  font-size: {{ theme.text.text_nav_footer.xs.size.size ~ theme.text.text_nav_footer.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_nav_footer.transform }};
+}
+
+.text_nav_footer:hover {
+  {{ theme.text.text_nav_footer.hover.style }};
+  color: {{ theme.text.text_nav_footer.hover.color }};
+  font-size: {{ theme.text.text_nav_footer.hover.size ~ theme.text.text_nav_footer.hover.size_unit }};
+}
+
+.text_breadcrumbs {
+  {{ theme.text.text_breadcrumbs.font.style }};
+  color: {{ theme.text.text_breadcrumbs.font.color }};
+  font-size: {{ theme.text.text_breadcrumbs.xs.size.size ~ theme.text.text_breadcrumbs.xs.size.size_unit }};
+  text-transform: {{ theme.text.text_breadcrumbs.transform }};
+}
+
+.text_breadcrumbs:hover {
+  {{ theme.text.text_breadcrumbs.hover.style }};
+  color: {{ theme.text.text_breadcrumbs.hover.color }};
+  font-size: {{ theme.text.text_breadcrumbs.hover.size ~ theme.text.text_breadcrumbs.hover.size_unit }};
+}
+
+{% for screen in screens.keys() %}
+  @media (min-width: {{ screens[screen] }}) {
+    {% set theme_text_tags = theme.text.keys() | reject("containing", "body_font") | reject("containing", "links") %}
+    {% for tag in theme_text_tags %}
+      {{ theme.text[tag] | tojson }}
+      {% set rule = theme.text[tag][screen]%}
+      {{tag}}, .{{tag}} {
+        font-size: {{ rule.size.size ~ rule.size.size_unit }};
+        line-height: {{ rule.line_height }}%;
+      }
+    {% endfor %}
+  }
+{% endfor %}
+
+/* Blockquote */
+
+blockquote {
+  border-left-color: {{ secondary_color }};
 }
 
 /* CSS variables */

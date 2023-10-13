@@ -1,19 +1,10 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {% for item in module.field_group %}
-    <div class="flex flex-col justify-center items-center p-6 bg-purple-800">
-      {% if item.icon.src %}
-        {% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
-        {% if item.icon.size_type == 'auto' %}
-          {% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}" style="max-width: 100%; height: auto;"' %}
-        {% elif item.icon.size_type == 'auto_custom_max' %}
-          {% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
-        {% endif %}
-         {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
-        <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-      {% endif %}
-      <div class="text-white font-bold md:text-lg lg:text-xl">
-        {% inline_text field="icon_label" value="{{ item.icon_label }}" %}
+<div class="grid grid-cols-4 gap-6">
+  {% for item in blog_recent_posts(module.blog, module.max_items) %}
+    <a href="{{ item.absolute_url }}" class="flex flex-col items-center p-6 bg-purple-800 group duration-300 hover:-translate-y-3">
+      <img src="{{ item.featured_image }}" class="group-hover:scale-105 duration-300" alt="{{ item.featured_image_alt_text }}">
+      <div class="text-white font-xl font-bold group-hover:underline">
+        {{ item.title }}
       </div>
-    </div>
+    </a>
   {% endfor %}
 </div>

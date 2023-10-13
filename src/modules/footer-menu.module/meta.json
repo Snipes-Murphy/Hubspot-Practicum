@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "../../images/module-icons/menu.svg",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 139599071599,
+  "label" : "Footer Links",
+  "is_available_for_new_content" : true
+}

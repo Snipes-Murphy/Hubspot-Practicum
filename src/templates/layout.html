@@ -6,15 +6,15 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-{% include_dnd_partial path="../sections/hero-banner.html"
-  context={
-    "backgroundColor": "red",
-    "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis optio laudantium, assumenda rem veniam sit. Dicta vitae officiis harum aspernatur dignissimos doloribus, debitis cum, voluptatem autem, similique expedita officia possimus?</p>"
-  }
+  {% include_dnd_partial path="../sections/hero-banner.html"
+    context={
+      "backgroundColor": "red",
+      "content": "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis optio laudantium, assumenda rem veniam sit. Dicta vitae officiis harum aspernatur dignissimos doloribus, debitis cum, voluptatem autem, similique expedita officia possimus?</p>"
+    }
   %}
 
-{% dnd_area "dnd_area"
-  label="Main section"
-%}
-{% end_dnd_area %}
+  {% dnd_area "dnd_area"
+    label="Main section"
+  %}
+  {% end_dnd_area %}
 {% endblock body %}

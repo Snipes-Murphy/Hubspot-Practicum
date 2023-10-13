@@ -20,7 +20,7 @@
             <h1 class="font-bold mt-2 text-5xl md:text-6xl lg:text-7xl">{{ content.name }}</h1>
           </div>
           <div class="border-l border-grey-200 space-y-1 px-4">
-            {% for tag in blog_tags(content, 250) %}
+            {% for tag in content.tag_list %}
               <a class="block hover:underline" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
             {% endfor %}
           </div>

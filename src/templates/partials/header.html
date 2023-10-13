@@ -5,12 +5,14 @@
 -->
 <!-- Begin partial -->
 
-<div class="bg-slate-200 p-12">
+<div class="flex justify-between items-center px-4">
     {% module "page_template_logo" path="@hubspot/logo" label="Logo" %}
-    {% dnd_area "header"
-    %}
-
-    {% end_dnd_area %}
+    <div class="w-full flex justify-end">
+        {% module "menu" path="/webcoda-theme-new/modules/menu.module" %}
+        <div class="flex items-center">
+            {% module "button" path="/webcoda-theme-new/modules/button.module" %}
+        </div>
+    </div>
 </div>
 
 <!-- End partial -->

@@ -1,11 +1,35 @@
-<!-- custom widget definition not found (portalId: 22127437, path: /webcoda-theme-new/modules/blog-hightlighted-image-text, moduleId: 112799933213) -->
+{% set href = module.field_group.link_field.url.href %}
+{% if module.field_group.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if module.field_group.link_field.no_follow %}
+  {% do rel.append("nofollow") %}
+{% endif %}
+{% if module.field_group.link_field.open_in_new_tab %}
+  {% do rel.append("noopener") %}
+{% endif %}
+
 <div style="background-color: {{ module.background.color }}">
   <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
     <div class="grid grid-cols-3">
       <div class="col-span-2 flex pr-4 items-center">
-        <h2 class="font-normal">
-          {% inline_text field="text_field" value="{{ module.text_field }}" %}
-        </h2>
+        <div>
+          <h2 class="font-normal">
+            {{ module.text_field }}
+          </h2>
+          {% if module.field_group.button_text %}
+            <div class="mt-6">
+              <a class="rounded-md inline-block px-10 py-3 text-lg font-medium duration-300 text-purple-900 bg-transparent border-2 border-purple-900 hover:bg-purple-900 hover:text-white disabled:opacity-30" 
+                href="{{ href }}"
+                {% if module.field_group.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+              >
+                {{ module.field_group.button_text }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
       </div>
       <div>
         {% if module.image_field.src %}

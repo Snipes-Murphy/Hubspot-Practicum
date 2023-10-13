@@ -237,18 +237,4 @@
       }
     }
   }
-}, {
-  "id" : "db853cae-187e-9dc3-8a8b-46b0744ba964",
-  "name" : "menu_style",
-  "display_width" : null,
-  "label" : "Menu Style",
-  "required" : false,
-  "locked" : false,
-  "display" : "radio",
-  "choices" : [ [ "heading", "Heading" ], [ "list", "List" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "default" : "heading"
 } ]

@@ -3,15 +3,3 @@
 @tailwind utilities;
 
 @use 'hubspot-cms.css';
-
-h1 {
-  @apply text-5xl md:text-6xl lg:text-7xl;
-}
-
-h2 {
-  @apply text-xl md:text-2xl lg:text-3xl font-bold;
-}
-
-h3 {
-  @apply text-xl md:text-2xl lg:text-3xl;
-}
