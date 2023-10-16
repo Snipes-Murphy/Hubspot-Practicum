@@ -2948,6 +2948,11 @@
 						"label": "Hover",
 						"name": "hover",
 						"type": "font",
+						"visibility": {
+							"hidden_subfields": {
+								"font": true
+							}
+						},
 						"inherited_value": {
 							"property_value_paths": {
 								"color": "theme.global_fonts.secondary.color",
@@ -3160,6 +3165,11 @@
 						"label": "Hover",
 						"name": "hover",
 						"type": "font",
+						"visibility": {
+							"hidden_subfields": {
+								"font": true
+							}
+						},
 						"inherited_value": {
 							"property_value_paths": {
 								"color": "theme.global_fonts.secondary.color",
@@ -3372,6 +3382,11 @@
 						"label": "Hover",
 						"name": "hover",
 						"type": "font",
+						"visibility": {
+							"hidden_subfields": {
+								"font": true
+							}
+						},
 						"inherited_value": {
 							"property_value_paths": {
 								"color": "theme.global_fonts.secondary.color",
@@ -3584,6 +3599,11 @@
 						"label": "Hover",
 						"name": "hover",
 						"type": "font",
+						"visibility": {
+							"hidden_subfields": {
+								"font": true
+							}
+						},
 						"inherited_value": {
 							"property_value_paths": {
 								"color": "theme.global_fonts.secondary.color",
@@ -3796,6 +3816,11 @@
 						"label": "Hover",
 						"name": "hover",
 						"type": "font",
+						"visibility": {
+							"hidden_subfields": {
+								"font": true
+							}
+						},
 						"inherited_value": {
 							"property_value_paths": {
 								"color": "theme.global_fonts.secondary.color",
@@ -4008,6 +4033,11 @@
 						"label": "Hover",
 						"name": "hover",
 						"type": "font",
+						"visibility": {
+							"hidden_subfields": {
+								"font": true
+							}
+						},
 						"inherited_value": {
 							"property_value_paths": {
 								"color": "theme.global_fonts.secondary.color",

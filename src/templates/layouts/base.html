@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://use.typekit.net">
     <link rel="preload" href="https://use.typekit.net/zpc8xsd.css">
     <link rel="stylesheet" href="https://use.typekit.net/zpc8xsd.css">
-    {{ require_css(get_asset_url("../../css/hubspot-cms.css")) }}
     {{ require_css(get_asset_url("../../dist/main.css")) }}
+    {{ require_css(get_asset_url("../../css/hubspot-cms.css")) }}
     {# This is intended to be used if a template requires template specific style sheets #}
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}

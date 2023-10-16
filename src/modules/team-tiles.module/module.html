@@ -1,0 +1,22 @@
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {% for item in module.users %}
+    {% if item.profile_picture.src %}
+      {% set sizeAttrs = 'width="{{ item.profile_picture.width }}" height="{{ item.profile_picture.height }}"' %}
+      {% if item.profile_picture.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ item.profile_picture.width }}" height="{{ item.profile_picture.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif item.profile_picture.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ item.profile_picture.max_width }}" height="{{ item.profile_picture.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = item.profile_picture.loading != 'disabled' ? 'loading="{{ item.profile_picture.loading }}"' : '' %}
+    {% endif %}
+    <div class="flex flex-col items-center pt-6 bg-white">
+      <div class="text-center">
+        <img class="rounded-full aspect-square w-[166px]" src="{{ item.profile_picture.src }}" alt="{{ item.profile_picture.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      </div>
+      <div class="text-purple-900 text-center p-8 pt-3">
+        <p class="text_body_lg font-bold">{% inline_text field="full_name" value="{{ item.full_name }}" %}</p>
+        <p>{% inline_text field="role" value="{{ item.role }}" %}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

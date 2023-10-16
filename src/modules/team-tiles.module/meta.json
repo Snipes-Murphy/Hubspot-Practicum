@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Address%20Card:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 140286907567,
+  "label" : "Team Tiles",
+  "is_available_for_new_content" : true
+}

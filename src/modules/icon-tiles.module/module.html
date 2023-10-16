@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 gap-6">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
   {% for item in blog_recent_posts(module.blog, module.max_items) %}
     <a href="{{ item.absolute_url }}" class="flex flex-col items-center p-6 bg-purple-800 group duration-300 hover:-translate-y-3">
       <img src="{{ item.featured_image }}" class="group-hover:scale-105 duration-300" alt="{{ item.featured_image_alt_text }}">

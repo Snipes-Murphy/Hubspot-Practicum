@@ -44,7 +44,7 @@
 {% endif %}
 
 <div class="button-wrapper">
-  <a class="rounded-md inline-block px-10 py-3 text-lg font-medium duration-300 {{ btnClass }}" href="{{ href }}"
+  <a class="rounded-md inline-block px-10 py-3 text-lg font-medium duration-300 {{ module.styles.button_size }} {{ btnClass }}" href="{{ href }}"
   {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
   {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
   >

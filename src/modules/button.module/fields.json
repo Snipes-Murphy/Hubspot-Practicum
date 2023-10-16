@@ -73,6 +73,19 @@
     "default" : {
       "alignment" : { }
     }
+  }, {
+    "id" : "b8eca44c-11e7-afc4-64fd-e9133cc8f7f8",
+    "name" : "button_size",
+    "display_width" : null,
+    "label" : "Button Size",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text_btn_sm", "Small" ], [ "text_btn_md", "Medium" ], [ "text_btn_lg", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
   } ],
   "tab" : "STYLE",
   "expanded" : false,

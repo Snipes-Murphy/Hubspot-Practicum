@@ -1,0 +1,75 @@
+[ {
+  "id" : "ae92c2e2-aa00-88ab-0903-a1990299132c",
+  "name" : "users",
+  "display_width" : null,
+  "label" : "Users",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "fa80ab92-15d3-47ec-a898-69f5041a0f5a",
+    "name" : "profile_picture",
+    "display_width" : null,
+    "label" : "Profile Picture",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "ed7d6d37-423c-0573-3369-eca0902db7bf",
+    "name" : "full_name",
+    "display_width" : null,
+    "label" : "Full Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "4281ab49-a37f-bde6-79bf-fd65043e23a6",
+    "name" : "role",
+    "display_width" : null,
+    "label" : "role",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "profile_picture" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ]
+}, {
+  "id" : "8ac61544-348b-cdd2-8546-458ad6dbfc04",
+  "name" : "max_items",
+  "display_width" : null,
+  "label" : "Max Items",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number"
+} ]

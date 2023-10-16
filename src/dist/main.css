@@ -1239,6 +1239,10 @@ video {
   width: 10rem;
 }
 
+.w-\[166px\] {
+  width: 166px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1509,6 +1513,10 @@ video {
   padding-right: 1rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1717,6 +1725,10 @@ video {
 @media (min-width: 1024px) {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-6 {
