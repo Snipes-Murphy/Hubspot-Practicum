@@ -237,4 +237,14 @@
       }
     }
   }
+}, {
+  "id" : "755506a4-3116-aadf-1b9f-1bddde9cf66d",
+  "name" : "horizontal",
+  "display_width" : null,
+  "label" : "Horizontal",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
 } ]

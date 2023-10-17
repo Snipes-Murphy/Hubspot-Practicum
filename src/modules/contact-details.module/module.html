@@ -1,0 +1,28 @@
+
+<table border="0" class="w-full">
+  <tbody>
+    {% for item in module.contact %}
+      {% set href = item.details.url.href %}
+      {% if item.details.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <tr>
+        <td class="w-[10%] h-16 p-3 !border-none">
+          {% if item.icon.src %}
+            {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
+            <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} width="44" height="44">
+          {% endif %}
+        </td>
+        <td class="w-[25%] h-16 p-3 !border-none !font-bold text_body_xl">{% inline_text field="item" value="{{ item.item }}" %}</td>
+        <td class="w-[65%] h-16 p-3 !border-none text_body_xl">
+          <a href="{{ href }}"
+            {% if item.details.open_in_new_tab %}target="_blank"{% endif %}
+            {% if item.details.rel %}rel="{{ item.details.rel }}"{% endif %}
+            >
+              {% inline_text field="detail_text" value="{{ item.detail_text }}" %}
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

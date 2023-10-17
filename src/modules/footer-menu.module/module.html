@@ -86,7 +86,7 @@
   {% set menu = menu(module.menu, "site_root").children %}
 
   {% macro render_link_item(link, depth) %}
-    <a class="text-sm block flex items-center" href="{{ link.url }}">{{ link.label }}</a>
+    <a class="text_nav_footer block flex items-center" href="{{ link.url }}">{{ link.label }}</a>
   {% endmacro %}
 
   {% for link in menu %}
@@ -98,6 +98,6 @@
 
 {# Desktop menu #}
 
-<nav class="space-y-4">
+<nav class="md:mb-0 mb-8 {{ module.horizontal ? "space-x-4 flex" : "space-y-4" }}">
   {{ menu_items() }}
 </nav>

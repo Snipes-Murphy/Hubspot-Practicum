@@ -38,6 +38,12 @@ module.exports = {
 				primary: {
 					DEFAULT: "#FF4B40"
 				},
+				red: {
+					"100": "#FFDDD9",
+					"400": "#EF4E41",
+					"500": "#FF4B40",
+					"600": "#E6362E",
+				},
 				blue: {
 					"700": "#022bff",
 				},

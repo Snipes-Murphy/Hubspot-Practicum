@@ -56,18 +56,18 @@ p {
 
 /* Anchors */
 
-a {
+.prose a {
   {{ anchor_font.style }};
   color: {{ anchor_font.color }};
 }
 
-a:hover,
-a:focus {
+.prose a:hover,
+.prose a:focus {
   {{ anchor_font.style }};
   color: {{ color_variant(anchor_font.color, -40) }};
 }
 
-a:active {
+.prose a:active {
   {{ anchor_font.style }};
   color: {{ color_variant(anchor_font.color, 40) }};
 }

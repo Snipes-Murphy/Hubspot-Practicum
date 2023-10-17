@@ -3,3 +3,100 @@
 @tailwind utilities;
 
 @use 'hubspot-cms.css';
+
+form .hs-error-msgs {
+  @apply text-red-400 text-sm mt-2;
+}
+
+form input:not([type="checkbox"]) {
+  @apply duration-300 inline-block px-2 py-3 !w-full min-h-[40px] border-2 border-grey-200 rounded shadow-none outline-none;
+}
+
+form input:focus {
+  @apply border-blue-700;
+}
+
+form input.error {
+  @apply border-red-400;
+}
+
+form textarea {
+  @apply duration-300 inline-block px-2 py-3 !w-full min-h-[40px] border-2 border-grey-200 rounded shadow-none outline-none h-[120px];
+}
+
+form textarea:focus {
+  @apply border-blue-700;
+}
+
+form textarea.error {
+  @apply border-red-400;
+}
+
+form .hs_error_rollup {
+  @apply bg-red-100 !text-red-400 p-3 mb-4;
+}
+
+form .hs_error_rollup .hs-main-font-element {
+  @apply !text-red-400 m-0;
+}
+
+form .hs_error_rollup .hs-error-msgs {
+  @apply m-0 font-semibold;
+}
+
+form .field {
+  @apply mb-3;
+}
+
+.contact-form label {
+  @apply mb-2 inline-block;
+}
+
+form .hs-recaptcha {
+  @apply !mb-4;
+}
+
+form .hs-form-booleancheckbox-display {
+  @apply flex items-center space-x-2;
+}
+
+form label .hs-form-required {
+  @apply text-red-400 ml-1;
+}
+
+.newsletter-form input[type="submit"] {
+  @apply text-sm rounded-md py-3 px-6 inline-block font-medium duration-300 text-purple-900 bg-transparent border-2 border-purple-900 hover:bg-purple-900 hover:text-white disabled:opacity-30;
+}
+
+.contact-form input[type="submit"] {
+  @apply cursor-pointer border-none text-sm inline-block !w-auto rounded-md py-3 px-6 inline-block font-medium duration-300 text-white bg-primary hover:bg-red-600;
+}
+
+.contact-form {
+  @apply bg-purple-900 p-8;
+}
+
+.contact-form .submitted-message {
+  background-color: #EBF8CD;
+  color: #000;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.contact-form fieldset {
+  @apply w-full !max-w-full;
+}
+
+.contact-form label:not(.hs-error-msg) {
+  @apply text-white font-semibold text-sm;
+}
+
+@media screen and (min-width: 480px) {
+  .form-columns-2 > div:first-child {
+    @apply pr-2;
+  }
+
+  .form-columns-2 > div:last-child {
+    @apply pl-2;
+  }
+}

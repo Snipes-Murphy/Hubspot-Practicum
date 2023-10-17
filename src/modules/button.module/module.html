@@ -34,7 +34,7 @@
 {# Set button classes based on button_color #}
 {% set btnClass = "" %}
 {% if module.styles.button_color is equalto "primary" %}
-  {% set btnClass = "text-white bg-primary"%}
+  {% set btnClass = "text-white bg-primary hover:bg-red-600"%}
 {% endif %}
 {% if module.styles.button_color is equalto "dark_outline" %}
   {% set btnClass = "text-purple-900 bg-transparent border-2 border-purple-900 hover:bg-purple-900 hover:text-white disabled:opacity-30" %}
