@@ -1,0 +1,86 @@
+[ {
+  "id" : "aa257345-6731-7c58-ba3e-7a05fe48df81",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "1ce6ea92-96c6-ba54-b7c2-5ced4f9a41dd",
+  "name" : "cards",
+  "display_width" : null,
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "bffcfb87-a435-6746-dfd3-953150dd9803",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "3ea5d1a5-9561-8109-d255-fec7679b80b0",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "71ebc92b-ba93-104d-279e-4a674c6d309e",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ]
+}, {
+  "id" : "ad9d7f69-7ca8-6405-6e50-007a9e8c2742",
+  "name" : "no_padding",
+  "display_width" : null,
+  "label" : "No padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+} ]

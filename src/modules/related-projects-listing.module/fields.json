@@ -11,70 +11,97 @@
   "type" : "group",
   "default" : { }
 }, {
-  "id" : "5800c1ce-29df-acce-383f-1d6652392b70",
-  "name" : "background_color",
+  "id" : "79868362-6652-64da-ba12-780e7dd955a4",
+  "name" : "heading",
   "display_width" : null,
-  "label" : "Background Color",
+  "label" : "Heading",
   "required" : false,
   "locked" : false,
-  "type" : "color",
-  "default" : {
-    "color" : null,
-    "opacity" : null
-  }
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
 }, {
-  "id" : "a5879a61-b094-f45b-d097-540a290cb174",
-  "name" : "text_color",
+  "id" : "cd0ccbec-3b1f-9f40-2532-6b07998f06dd",
+  "name" : "project",
   "display_width" : null,
-  "label" : "Text Color",
+  "label" : "Project",
   "required" : false,
   "locked" : false,
-  "type" : "color",
-  "default" : {
-    "color" : null,
-    "opacity" : null
-  }
-}, {
-  "id" : "9a0c14cd-77c0-2f71-41e4-4e7a3ec7d839",
-  "name" : "box_color",
-  "display_width" : null,
-  "label" : "Box Color",
-  "required" : false,
-  "locked" : false,
-  "type" : "color",
-  "default" : {
-    "color" : null,
-    "opacity" : null
-  }
-}, {
-  "id" : "8af1e957-f28f-4166-a951-a90d01ad17b1",
-  "name" : "blog_field",
-  "display_width" : null,
-  "label" : "Blog",
-  "required" : false,
-  "locked" : false,
-  "type" : "blog",
-  "default" : 135361956134
-}, {
-  "id" : "47c0526d-685e-9d21-31df-1466e85fbd7e",
-  "name" : "tag_field",
-  "display_width" : null,
-  "label" : "Tag",
-  "required" : false,
-  "locked" : false,
-  "tag_value" : "SLUG",
-  "type" : "tag"
-}, {
-  "id" : "cf990e97-7326-172c-7023-6c262a930c23",
-  "name" : "max_items",
-  "display_width" : null,
-  "label" : "Max Items",
-  "required" : false,
-  "locked" : false,
-  "display" : "slider",
-  "min" : 1,
-  "max" : 12,
-  "step" : 1,
-  "type" : "number",
-  "default" : 1
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "4f784386-8062-0684-3e2c-dcdfb19cfca2",
+    "name" : "logo",
+    "display_width" : null,
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "e2b66498-cdfc-6095-6cd1-fe24fa195275",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "a9cd924f-04e9-4d56-9da7-1f9ccb4f27f9",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "52541c60-8a01-2441-9851-e40073d71ebd",
+    "name" : "website_url",
+    "display_width" : null,
+    "label" : "Website Url",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "website_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
 } ]

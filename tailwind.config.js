@@ -30,10 +30,17 @@ const themeFields = getThemeFields(themeFieldsJson);
 
 module.exports = {
   content: [
-    './src/**/*.{html, css, js, jsx}'
+    './src/**/*.{html, css, js, jsx}',
   ],
   theme: {
 		extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#141525',
+          },
+        },
+      },
 			colors: {
 				primary: {
 					DEFAULT: "#FF4B40"

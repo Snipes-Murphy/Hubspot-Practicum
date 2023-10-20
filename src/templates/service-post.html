@@ -1,13 +1,13 @@
 <!--
   templateType: blog_post
   isAvailableForNewContent: true
-  label: Services Post - NEW
+  label: Service Post Layout
   screenshotPath: ../images/template-previews/blog-post.png
 -->
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-<div class="body-container body-container--blog-post">
+<div class="pt-20 body-container body-container--blog-post">
 
   {# Blog post #}
 
@@ -15,7 +15,7 @@
     <div class="py-12 bg-white">
       <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
         <div class="text-center">
-          <span class="text-lg lg:text-xl">{{ content.name }}</span>
+          {# <span class="text-lg lg:text-xl">{{ content.name }}</span> #}
           <h1 class="font-bold mt-2 text-5xl md:text-6xl lg:text-7xl">{{ content.name }}</h1>
           {# <img class="mt-24" src="{{ content.featured_image }}" alt="{{content.feature_image_alt}}"> #}
         </div>

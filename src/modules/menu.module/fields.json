@@ -245,10 +245,10 @@
   "required" : false,
   "locked" : false,
   "display" : "radio",
-  "choices" : [ [ "heading", "Heading" ], [ "list", "List" ] ],
+  "choices" : [ [ "black", "Black" ], [ "white", "White" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
   "type" : "choice",
-  "default" : "heading"
+  "default" : "black"
 } ]

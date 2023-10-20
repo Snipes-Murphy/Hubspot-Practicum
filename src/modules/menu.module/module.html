@@ -5,7 +5,7 @@
   {% set menu = menu(module.menu, "site_root").children %}
 
   {% macro render_link_item(link, depth) %}
-    <a class="text-lg h-20 block flex items-center border-b-2 border-transparent text_nav_primary {{ "hover:border-red-500" if module.menu_style }}" href="{{ link.url }}">{{ link.label }}</a>
+    <a class="text-lg py-3 lg:py-0 lg:h-20 block flex items-center lg:border-b-2 border-transparent text_nav_primary {{ "hover:border-red-500" if module.menu_style }}" style="color: {{ module.menu_style }}" href="{{ link.url }}">{{ link.label }}</a>
   {% endmacro %}
 
   {% for link in menu %}
@@ -17,14 +17,6 @@
 
 {# Desktop menu #}
 
-<nav class="flex items-center h-full space-x-10 pr-10">
+<nav class="flex items-center h-full lg:space-x-10 pr-10 navigation-menu">
   {{ menu_items() }}
-</nav>
-
-{# Mobile menu #}
-
-<nav class="menu menu--mobile" aria-label="Main menu">
-  <ul class="menu__wrapper no-list">
-    {{ menu_items() }}
-  </ul>
 </nav>

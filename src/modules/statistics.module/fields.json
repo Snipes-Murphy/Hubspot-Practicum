@@ -1,0 +1,41 @@
+[ {
+  "id" : "761ce69c-8dd4-b70e-c52a-497f32430e7e",
+  "name" : "field_group",
+  "display_width" : null,
+  "label" : "Statistic",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "048b254b-69e4-b731-9d9e-6228a5fd2701",
+    "name" : "stat_label",
+    "display_width" : null,
+    "label" : "Label",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "58663d89-ce88-c73b-328f-aac397927ee9",
+    "name" : "value",
+    "display_width" : null,
+    "label" : "Value",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ { } ]
+} ]

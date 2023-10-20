@@ -1,0 +1,18 @@
+<!--
+    templateType: page
+    label: Dark navigation page template
+    isAvailableForNewContent: true
+-->
+{% extends "./layouts/base.html" %}
+
+{% block header %}
+  {% global_partial path="./partials/dark-header.html" %}
+{% endblock header %}
+
+{% block body %}
+
+  {% dnd_area "dnd_area"
+    label="Main section"
+  %}
+  {% end_dnd_area %}
+{% endblock body %}

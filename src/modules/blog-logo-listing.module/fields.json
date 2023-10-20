@@ -1,0 +1,59 @@
+[ {
+  "id" : "f6ac080d-24d4-0bc9-469b-1341f7c6fe10",
+  "name" : "centered",
+  "display_width" : null,
+  "label" : "Centered",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "21624915-91f4-63ec-e589-e4cfa2afe1fe",
+  "name" : "no_padding",
+  "display_width" : null,
+  "label" : "No padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "f627773a-c179-934c-c785-b6a4a57c7a62",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "32e6853d-a762-c449-82fc-2d00d30b583e",
+  "name" : "client_logo",
+  "display_width" : null,
+  "label" : "Client Logo",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://22127437.fs1.hubspotusercontent-na1.net/hubfs/22127437/webcoda-logo-dark.png",
+    "alt" : "webcoda-logo-dark",
+    "loading" : "lazy",
+    "width" : 1247,
+    "height" : 288,
+    "max_width" : 1247,
+    "max_height" : 288
+  }
+} ]

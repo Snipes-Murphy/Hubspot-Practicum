@@ -1,0 +1,25 @@
+[ {
+  "id" : "a8d34744-8d9e-7ed2-6a1d-796d1cf8c870",
+  "name" : "richtext_field",
+  "display_width" : null,
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "type" : "richtext"
+}, {
+  "id" : "5ee8f79c-40cf-dfda-639c-2c4f48e33769",
+  "name" : "no_padding",
+  "display_width" : null,
+  "label" : "No padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+} ]

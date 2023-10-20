@@ -65,7 +65,7 @@
   "id" : "7c6e484a-1008-7845-839c-cfde1959fbaa",
   "name" : "small_text",
   "display_width" : null,
-  "label" : "Small Text",
+  "label" : "Small width",
   "required" : false,
   "locked" : false,
   "display" : "checkbox",

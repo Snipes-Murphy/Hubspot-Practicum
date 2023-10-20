@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 140712545579,
+  "label" : "Rich Text Columns",
+  "is_available_for_new_content" : true
+}

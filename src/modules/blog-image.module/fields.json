@@ -1,0 +1,28 @@
+[ {
+  "id" : "5712b018-b61a-5f04-0a00-966696aa2842",
+  "name" : "image_field",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : true,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "29f0b545-59dd-9efa-7d7c-ef33cb525ced",
+  "name" : "no_padding",
+  "display_width" : null,
+  "label" : "No padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+} ]

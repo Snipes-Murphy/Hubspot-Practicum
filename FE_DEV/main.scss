@@ -100,3 +100,49 @@ form label .hs-form-required {
     @apply pl-2;
   }
 }
+
+@media (max-width: 1025px) {
+  .navigation-items {
+    background: white;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+  }
+
+  .dark-navigation-bg {
+    @apply !bg-purple-900
+  }
+
+  .dark-navigation-bg .navigation-items {
+    @apply !bg-purple-900
+  }
+
+  .dark-navigation-bg svg {
+    @apply !fill-white
+  }
+
+  .navigation-menu {
+    padding-right: 0 !important;
+    display: block;
+  }
+
+  .navigation-menu > a {
+    justify-content: center;
+  }
+
+  .navigation-cta {
+    justify-content: center;
+  }
+
+  .navigation-cta > div {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .navigation-cta a {
+    display: block;
+    text-align: center;
+    margin: 16px 16px 0;
+  }
+}

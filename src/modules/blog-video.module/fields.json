@@ -1,0 +1,22 @@
+[ {
+  "id" : "9be1abd2-865c-9706-6fe8-6d8b704aa86b",
+  "name" : "videoplayer_field",
+  "display_width" : null,
+  "label" : "Video",
+  "required" : true,
+  "locked" : false,
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : false,
+  "type" : "videoplayer"
+}, {
+  "id" : "dab3e975-f707-bccb-272c-81006e444bc2",
+  "name" : "no_padding",
+  "display_width" : null,
+  "label" : "No padding",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+} ]

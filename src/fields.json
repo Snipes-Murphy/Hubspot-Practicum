@@ -4229,7 +4229,8 @@
 						"type": "font",
 						"visibility": {
 							"hidden_subfields": {
-								"size": true
+								"size": true,
+								"font": true
 							}
 						},
 						"inherited_value": {

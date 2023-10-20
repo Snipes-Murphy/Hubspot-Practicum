@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Text%20Width:SOLID",
+  "host_template_types" : [ "BLOG_POST" ],
+  "module_id" : 140976818028,
+  "label" : "Text and Image",
+  "is_available_for_new_content" : true
+}

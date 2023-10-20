@@ -15,28 +15,36 @@
           {% endif %}
         {% endfor %}
 
-        {% if module.background_color %}
-          .group:hover .view-site-btn {
-            background-color: white;
-            color: {{ module.background_color.color }};
-          }
-        {% endif %}
       {% end_scope_css %}
     </style>
   {% end_require_css %}
 
-  <div style="background-color: {{ module.background_color.color }}; color: {{ module.text_color.color }}">
-    <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
-      <div class="grid grid-cols-2 gap-8">
-        {% for item in module.tag_field ? blog_recent_tag_posts(module.blog_field, module.tag_field, module.max_items, "OR") : blog_recent_posts(module.blog_field, module.max_items) %}
-          <a href="{{ item.absolute_url }}" class="group block p-8" style="background-color: {{ module.box_color.color }}">
-            <div class="relative flex">
-              <div class="overflow-hidden aspect-square w-40 h-40 p-4">
-                <img src="{{ item.featured_image }}" alt="{{ item.featured_image_alt_text }}" class="group-hover:scale-105 transition duration-300 rounded-full">
+  <div class="bg-purple-900 text-white">
+    <div class="max-w-[1350px] mx-auto lg:py-14 py-6">
+      {% if module.heading %}
+        <h2 class="mb-6 text-white text-center">
+          {% inline_text field="heading" value="{{ module.heading }}" %}
+        </h2>
+      {% endif %}
+      <div class="grid lg:grid-cols-2 gap-8 lg:px-0 px-4">
+        {% for item in module.project %}
+          {% if item.logo.src %}
+            {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+            {% if item.logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.logo.max_width }}" height="{{ item.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
+          {% endif %}
+          <a href="{{ item.website_url.href }}" class="group block p-8 bg-purple-800">
+            <div class="relative md:flex">
+              <div class="overflow-hidden aspect-square w-full md:w-40 md:h-40 p-4 shrink-0">
+                <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }} class="group-hover:scale-105 transition duration-300 rounded-full">
               </div>
-              <div class="pl-8 text-copy">
-                <h2 class="mt-1 group-hover:underline">{% inline_text field="title" value="{{ item.title }}" %}</h2>
-                <div class="text-xl leading-normal">{% inline_text field="title" value="{{ item.title }}" %}</div>
+              <div class="md:pl-8 flex flex-col items-start justify-center">
+                <h2 class="mt-1 group-hover:underline text-white">{% inline_text field="title" value="{{ item.title }}" %}</h2>
+                <p class="text-white mt-3">{% inline_text field="description" value="{{ item.description }}" %}</p>
                 <p class="inline-block py-1 px-4 bg-transparent border-2 border-white rounded-md text-sm mt-6 duration-300 view-site-btn">View site</p>
               </div>
             </div>

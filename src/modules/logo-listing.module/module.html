@@ -1,6 +1,6 @@
 
-{% set imageClass = module.centered == true ? 'md:col-2 p-0' : '' %}
-{% set gridClass = module.centered == true ? 'row justify-center items-center space-x-4' : 'grid grid-cols-3 lg:grid-cols-6 gap-4' %}
+{% set imageClass = module.centered == true ? 'col-6 sm:col-3 md:col-2 text-center py-4 md:py-0 px-4' : '' %}
+{% set gridClass = module.centered == true ? 'row justify-center items-center' : 'grid grid-cols-3 lg:grid-cols-6 gap-4' %}
 
 <div class="{{ gridClass }}">
 	{% for item in module.client_logo %}

@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 140888990351,
+  "label" : "Single Image",
+  "is_available_for_new_content" : true
+}
