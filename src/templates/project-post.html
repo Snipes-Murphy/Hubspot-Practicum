@@ -13,7 +13,7 @@
 
   <article>
     <div class="py-12 bg-white">
-      <div class="max-w-[1350px] mx-auto lg:py-12 py-6 lg:px-8 px:px-6">
+      <div class="max-w-[1350px] mx-auto lg:py-12 py-6 lg:px-8 md:px-6">
         <div class="grid grid-cols-4">
           <div class="col-span-3">
             {# <span class="text-lg lg:text-xl">{{ content.name }}</span> #}
@@ -21,7 +21,7 @@
           </div>
           <div class="border-l border-grey-200 space-y-1 px-4">
             {% for tag in content.tag_list %}
-              <a class="block hover:underline" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>
+              <a class="block hover:underline" href="/service/{{ tag.slug }}" rel="tag">{{ tag.name }}</a>
             {% endfor %}
           </div>
         </div>
@@ -59,7 +59,7 @@
 
 
 
-  <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
+  <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 md:px-6">
     <h2 class="mb-4">Explore more projects</h2>
     <div class="grid grid-cols-2 gap-8">
       {% related_blog_posts

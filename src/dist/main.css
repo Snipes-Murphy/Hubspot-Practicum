@@ -1462,10 +1462,6 @@ video {
   border-width: 2px;
 }
 
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
 .border-l {
   border-left-width: 1px;
 }
@@ -2110,12 +2106,12 @@ form label .hs-form-required {
     max-width: 75%;
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:gap-24 {
@@ -2125,6 +2121,11 @@ form label .hs-form-required {
   .md\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .md\:pl-8 {
@@ -2165,6 +2166,10 @@ form label .hs-form-required {
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:h-20 {
@@ -2240,6 +2245,10 @@ form label .hs-form-required {
     padding-bottom: 90px;
   }
 
+  .lg\:pl-8 {
+    padding-left: 2rem;
+  }
+
   .lg\:text-2xl {
     font-size: 24px;
     line-height: 1.6;
@@ -2263,11 +2272,6 @@ form label .hs-form-required {
   .lg\:text-xl {
     font-size: 20px;
     line-height: 1.6;
-  }
-
-  .lg\:hover\:border-red-500:hover {
-    --tw-border-opacity: 1;
-    border-color: rgb(255 75 64 / var(--tw-border-opacity));
   }
 
   .prose-p\:lg\:text-2xl :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {

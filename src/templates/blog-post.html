@@ -13,7 +13,7 @@
 
   <article>
     <div class="py-12 bg-white">
-      <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 px:px-6">
+      <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 md:px-6">
         <div class="text-center">
           {# <span class="text-lg lg:text-xl">{{ content.name }}</span> #}
           <h1 class="font-bold mt-2 text-5xl md:text-6xl lg:text-7xl">{{ content.name }}</h1>
@@ -25,5 +25,38 @@
       {{ content.post_body }}
     </div>
   </article>
+</div>
+
+{% macro related_posts(post, count, total) %}
+  <div class="group">
+    <a href="{{ post.absolute_url }}" class="relative">
+      <div class="overflow-hidden">
+        <img src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text }}" class="group-hover:scale-105 aspect-video object-cover transition duration-300">
+      </div>
+      <div class="p-8 text-copy max-w-[540px]">
+        <h2 class="!text-white">{% inline_text field="title" value="{{ post.name }}" %}</h2>
+      </div>
+    </a>
+    <div class="pb-8 px-8">
+      <div class="mb-2 !text-white">{{ post.blog_author.display_name }}</div>
+      <div>
+        {% for topic in post.topic_list %}
+          <a class="!text-white" href="{{ topic.slug }}">{{ topic.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+<div class="bg-purple-900">
+  <div class="max-w-[1350px] mx-auto lg:py-14 py-6 lg:px-8 md:px-6">
+    <div class="grid grid-cols-2 gap-8">
+      {% related_blog_posts
+        limit=2,
+        no_wrapper=True,
+        post_formatter="related_posts"
+      %}
+    </div>
+  </div>
 </div>
 {% endblock body %}

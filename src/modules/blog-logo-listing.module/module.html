@@ -2,7 +2,7 @@
 {% set imageClass = module.centered == true ? 'col-6 sm:col-3 md:col-2 text-center py-4 md:py-0 px-4' : 'flex justify-center items-center' %}
 {% set gridClass = module.centered == true ? 'row justify-center items-center' : 'grid grid-cols-3 lg:grid-cols-6 gap-4' %}
 <div class="bg-purple-900">
-  <div class="max-w-[1350px] mx-auto {{ !module.no_padding ? "lg:py-14 py-6" : "" }} lg:px-8 px:px-6">
+  <div class="max-w-[1350px] mx-auto {{ !module.no_padding ? "lg:py-14 py-6" : "" }} lg:px-8 md:px-6">
     {% if module.heading %}
       <div class="mb-6">
         <h2 class="!text-white text-center">{% inline_text field="heading" value="{{ module.heading }}" %}</h2>

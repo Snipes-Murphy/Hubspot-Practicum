@@ -16,13 +16,31 @@
       </div>
       <div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-8">
-          {% for item in blog_recent_posts(module.blog_field, module.max_items) %}
-            <a href="{{ item.absolute_url }}"
-               class="space-y-4 px-8 pb-8 border border-grey-200 block"
+          {% for item in module.service %}
+            {% set href = item.link_field.url.href %}
+            {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}
+            <a href="{{ href }}"
+              {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+              {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+              class="space-y-4 px-8 pb-8 border border-grey-200 block"
               >
-              <img src="{{ item.featured_image }}" class="w-32 h-32" alt="{{ item.featured_image_alt_text }}">
+              {% if item.service_image.src %}
+                {% set sizeAttrs = 'width="{{ item.service_image.width }}" height="{{ item.service_image.height }}"' %}
+                {% if item.service_image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.service_image.width }}" height="{{ item.service_image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.service_image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.service_image.max_width }}" height="{{ item.service_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.service_image.loading != 'disabled' ? 'loading="{{ item.service_image.loading }}"' : '' %}
+                <img src="{{ item.service_image.src }}" class="w-32 h-32" alt="{{ item.service_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
               <div class="text-xl lg:text-2xl font-bold">
-                {% inline_text field="title" value="{{ item.title }}" %}
+                {% inline_text field="heading" value="{{ item.heading }}" %}
+              </div>
+              <div class="md:text-lg lg:text-xl">
+                {% inline_rich_text field="richtext_field" value="{{ item.richtext_field }}" %}
               </div>
             </a>
           {% endfor %}
